@@ -1,0 +1,6 @@
+{
+  "require": {
+    "drakonli/php-imap": "dev-master"
+  },
+  "minimum-stability": "dev"
+}
