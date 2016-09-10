@@ -7,8 +7,6 @@ use PhpImap\Connection\Factory\Full\FullConnectionFactoryInterface;
 use PhpImap\Exception;
 use PhpImap\Mail\Criteria\Search\Collection\Builder\SearchCriteriaCollectionBuilderInterface;
 use PhpImap\Mail\Repository\MailRepositoryInterface;
-use SplString;
-use SplInt;
 use DateTime;
 
 /**
@@ -51,13 +49,13 @@ class EmailDisplayer
 
     public function showLetters($userName, $password)
     {
-        $connection = $this->fullConnectionFactory->createConnection(
-            new SplString($userName),
-            new SplString($password),
-            new SplInt(0),
-            new SplString('INBOX'),
-            new SplString('imap.gmail.com'),
-            new SplInt(993),
+        $connection = $this->fullConnectionFactory->createConnectionNonStrict(
+            $userName,
+            $password,
+            0,
+            'INBOX',
+            'imap.gmail.com',
+            993,
             [
                 MailBoxConnectionConfigFlagCollectionFactoryInterface::FLAG_WITH_VALUE_SERVICE => 'imap',
                 MailBoxConnectionConfigFlagCollectionFactoryInterface::FLAG_SSL,

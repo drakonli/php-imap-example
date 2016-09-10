@@ -13,12 +13,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/drakonli/php-imap.git",
-                "reference": "1bd83d3c3b5d034bce20fecc0e30ad620682a54d"
+                "reference": "5a62d09cd516b5511346d8ecc5b25ee24a19ac8a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/drakonli/php-imap/zipball/1bd83d3c3b5d034bce20fecc0e30ad620682a54d",
-                "reference": "1bd83d3c3b5d034bce20fecc0e30ad620682a54d",
+                "url": "https://api.github.com/repos/drakonli/php-imap/zipball/5a62d09cd516b5511346d8ecc5b25ee24a19ac8a",
+                "reference": "5a62d09cd516b5511346d8ecc5b25ee24a19ac8a",
                 "shasum": ""
             },
             "require": {
@@ -59,7 +59,7 @@
                 "mail",
                 "php"
             ],
-            "time": "2016-09-10 13:08:39"
+            "time": "2016-09-10 18:25:21"
         },
         {
             "name": "drakonli/php-utils",
