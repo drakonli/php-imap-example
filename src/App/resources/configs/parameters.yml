@@ -1,0 +1,9 @@
+parameters:
+    #change these according to your preference
+    mail.attachments.folder: /var/www/public/attachments
+    gmailLogin: login
+    gmailPassword: password
+    twig.templates.dir: /var/www/public/src/App/resources/templates
+    twig.engine.options:
+        cache: /var/www/public/cache
+        debug: false

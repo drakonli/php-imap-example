@@ -3,7 +3,7 @@
 namespace App;
 
 use PhpImap\Connection\Config\Mail\Box\Flag\Collection\Factory\MailBoxConnectionConfigFlagCollectionFactoryInterface;
-use PhpImap\Connection\Factory\Full\FullConnectionFactoryInterface;
+use PhpImap\Connection\Factory\ConnectionFactoryInterface;
 use PhpImap\Mail\Criteria\Search\Collection\Builder\SearchCriteriaCollectionBuilderInterface;
 use PhpImap\Mail\Repository\MailRepositoryInterface;
 use DateTime;
@@ -15,7 +15,7 @@ use DateTime;
 class EmailDisplayer
 {
     /**
-     * @var FullConnectionFactoryInterface
+     * @var ConnectionFactoryInterface
      */
     private $fullConnectionFactory;
 
@@ -37,13 +37,13 @@ class EmailDisplayer
     /**
      * EmailDisplayer constructor.
      *
-     * @param FullConnectionFactoryInterface $fullConnectionFactory
+     * @param ConnectionFactoryInterface               $fullConnectionFactory
      * @param SearchCriteriaCollectionBuilderInterface $mailSearchCriteriaBuilder
-     * @param MailRepositoryInterface $mailRepository
-     * @param \Twig_Environment $twig
+     * @param MailRepositoryInterface                  $mailRepository
+     * @param \Twig_Environment                        $twig
      */
     public function __construct(
-        FullConnectionFactoryInterface $fullConnectionFactory,
+        ConnectionFactoryInterface $fullConnectionFactory,
         SearchCriteriaCollectionBuilderInterface $mailSearchCriteriaBuilder,
         MailRepositoryInterface $mailRepository,
         \Twig_Environment $twig

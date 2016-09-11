@@ -13,10 +13,10 @@ $container = (new CachedDependencyContainerLoader($basicLoader, $cacheFile, $isD
     ->loadContainer(
         [
             new \SplFileInfo(
-                __DIR__.DIRECTORY_SEPARATOR.'src'.DIRECTORY_SEPARATOR.'resources'.DIRECTORY_SEPARATOR.'configs'.DIRECTORY_SEPARATOR.'parameters.yml'
+                __DIR__.DIRECTORY_SEPARATOR.'src'.DIRECTORY_SEPARATOR.'App'.DIRECTORY_SEPARATOR.'resources'.DIRECTORY_SEPARATOR.'configs'.DIRECTORY_SEPARATOR.'parameters.yml'
             ),
             new \SplFileInfo(
-                __DIR__.DIRECTORY_SEPARATOR.'src'.DIRECTORY_SEPARATOR.'resources'.DIRECTORY_SEPARATOR.'configs'.DIRECTORY_SEPARATOR.'services.yml'
+                __DIR__.DIRECTORY_SEPARATOR.'src'.DIRECTORY_SEPARATOR.'App'.DIRECTORY_SEPARATOR.'resources'.DIRECTORY_SEPARATOR.'configs'.DIRECTORY_SEPARATOR.'services.yml'
             ),
         ]
     );
