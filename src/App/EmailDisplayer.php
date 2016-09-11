@@ -4,7 +4,6 @@ namespace App;
 
 use PhpImap\Connection\Config\Mail\Box\Flag\Collection\Factory\MailBoxConnectionConfigFlagCollectionFactoryInterface;
 use PhpImap\Connection\Factory\Full\FullConnectionFactoryInterface;
-use PhpImap\Exception;
 use PhpImap\Mail\Criteria\Search\Collection\Builder\SearchCriteriaCollectionBuilderInterface;
 use PhpImap\Mail\Repository\MailRepositoryInterface;
 use DateTime;
@@ -31,20 +30,28 @@ class EmailDisplayer
     private $mailRepository;
 
     /**
-     * EmailRetriever constructor.
+     * @var \Twig_Environment
+     */
+    private $twig;
+
+    /**
+     * EmailDisplayer constructor.
      *
      * @param FullConnectionFactoryInterface $fullConnectionFactory
      * @param SearchCriteriaCollectionBuilderInterface $mailSearchCriteriaBuilder
      * @param MailRepositoryInterface $mailRepository
+     * @param \Twig_Environment $twig
      */
     public function __construct(
         FullConnectionFactoryInterface $fullConnectionFactory,
         SearchCriteriaCollectionBuilderInterface $mailSearchCriteriaBuilder,
-        MailRepositoryInterface $mailRepository
+        MailRepositoryInterface $mailRepository,
+        \Twig_Environment $twig
     ) {
         $this->fullConnectionFactory = $fullConnectionFactory;
         $this->mailSearchCriteriaBuilder = $mailSearchCriteriaBuilder;
         $this->mailRepository = $mailRepository;
+        $this->twig = $twig;
     }
 
     public function showLetters($userName, $password)
@@ -76,31 +83,6 @@ class EmailDisplayer
             new \SplInt(10)
         );
 
-        if (true === (bool) $mails->isEmpty()) {
-            throw new Exception('You have no letters, you lonely scrub!');
-        }
-
-        $counter = 0;
-        foreach ($mails as $mail) {
-            $counter++;
-
-            echo sprintf('%d. <br> Mail UID: %s', $counter, $mail->getUid());
-
-            if (true === (bool)$mail->hasHtmlContent()) {
-                $content = sprintf('%d. <br> Html Content: %s', $counter, $mail->getHtmlContent());
-            } else {
-                $content = sprintf('%d. <br> Plain Text: %s', $counter, $mail->getPlainTextContent());
-            }
-
-            echo $content;
-
-            echo '<br> Senders:';
-
-            foreach ($mail->getSenders() as $sender) {
-                echo sprintf('<br> - %s', $sender->getEmailAddress());
-            }
-        }
-
-        echo sprintf('<br> Letters for given criteria: %s', $mails->count());
+        echo $this->twig->render('display_emails.twig.html', ['mailCollection' => $mails]);
     }
 }

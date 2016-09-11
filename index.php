@@ -8,18 +8,19 @@ use \PhpImap\Dependency\Container\Loader\Cached\CachedDependencyContainerLoader;
 
 $basicLoader = new BasicDependencyContainerLoader();
 $cacheFile = new SplFileInfo(__DIR__.DIRECTORY_SEPARATOR.'cache'.DIRECTORY_SEPARATOR.'container.php');
-$isDebugMode = new SplBool(true);
+$isDebugMode = new SplBool(false);
 $container = (new CachedDependencyContainerLoader($basicLoader, $cacheFile, $isDebugMode))
     ->loadContainer(
         [
             new \SplFileInfo(
-                __DIR__.DIRECTORY_SEPARATOR.'src'.DIRECTORY_SEPARATOR.'resources'.DIRECTORY_SEPARATOR.'parameters.yml'
+                __DIR__.DIRECTORY_SEPARATOR.'src'.DIRECTORY_SEPARATOR.'resources'.DIRECTORY_SEPARATOR.'configs'.DIRECTORY_SEPARATOR.'parameters.yml'
             ),
             new \SplFileInfo(
-                __DIR__.DIRECTORY_SEPARATOR.'src'.DIRECTORY_SEPARATOR.'resources'.DIRECTORY_SEPARATOR.'services.yml'
+                __DIR__.DIRECTORY_SEPARATOR.'src'.DIRECTORY_SEPARATOR.'resources'.DIRECTORY_SEPARATOR.'configs'.DIRECTORY_SEPARATOR.'services.yml'
             ),
         ]
     );
+
 
 /**
  * @var \App\EmailDisplayer $mailDisplayer

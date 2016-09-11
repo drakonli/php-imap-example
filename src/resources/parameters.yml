@@ -1,4 +1,0 @@
-parameters:
-    mail.attachments.folder: /var/www/public/attachments
-    gmailLogin: login #change for your value
-    gmailPassword: password #change for your values

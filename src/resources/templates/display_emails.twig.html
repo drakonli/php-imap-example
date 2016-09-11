@@ -1,0 +1,29 @@
+{% if mailCollection.isEmpty %}
+    You have no letters, you lonely scrub!
+{% endif %}
+
+{% for mail in mailCollection %}
+    {{loop.index}}
+    <ul>
+        <li>Mail UID: {{mail.uid}}</li>
+
+        {% if false == mail.senders.isEmpty %}
+        <li>
+            Senders:
+            <ul>
+                {% for sender in mail.senders %}
+                <li>{{sender.emailAddress}}</li>
+                {% endfor %}
+            </ul>
+        </li>
+        {% endif %}
+
+        {% if mail.hasHtmlContent %}
+            <li>Content: {{mail.htmlContent}}</li>
+        {% else %}
+            <li>Content: {{mail.plainTextContent}}</li>
+        {% endif %}
+    </ul>
+{% endfor %}
+
+<div> Letters for given criteria: {{mail.count}} </div>

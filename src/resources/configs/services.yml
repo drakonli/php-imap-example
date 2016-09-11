@@ -1,0 +1,16 @@
+services:
+    app.email_displayer:
+        class: App\EmailDisplayer
+        arguments:
+            - '@connection.config.full_connection_factory_basic'
+            - '@mail.search_criteria.collection_builder_basic'
+            - '@mail.repository.basic'
+            - '@twig.engine'
+
+    twig.file.loader:
+        class: Twig_Loader_Filesystem
+        arguments: ['%twig.templates.dir%']
+
+    twig.engine:
+        class: Twig_Environment
+        arguments: ['@twig.file.loader', '%twig.engine.options%']
