@@ -33,9 +33,9 @@ class EmailDisplayer
     /**
      * EmailRetriever constructor.
      *
-     * @param FullConnectionFactoryInterface           $fullConnectionFactory
+     * @param FullConnectionFactoryInterface $fullConnectionFactory
      * @param SearchCriteriaCollectionBuilderInterface $mailSearchCriteriaBuilder
-     * @param MailRepositoryInterface                  $mailRepository
+     * @param MailRepositoryInterface $mailRepository
      */
     public function __construct(
         FullConnectionFactoryInterface $fullConnectionFactory,
@@ -69,9 +69,14 @@ class EmailDisplayer
             ->addOnDateCriteria(new DateTime('yesterday'))
             ->getSearchCriteriaCollection();
 
-        $mails = $this->mailRepository->find($connection, $mailSearchCriteria, new \SplInt(1), new \SplInt(10));
+        $mails = $this->mailRepository->find(
+            $connection->getImapStream(),
+            $mailSearchCriteria,
+            new \SplInt(1),
+            new \SplInt(10)
+        );
 
-        if (true === $mails->isEmpty()) {
+        if (true === (bool) $mails->isEmpty()) {
             throw new Exception('You have no letters, you lonely scrub!');
         }
 
@@ -80,6 +85,14 @@ class EmailDisplayer
             $counter++;
 
             echo sprintf('%d. <br> Mail UID: %s', $counter, $mail->getUid());
+
+            if (true === (bool)$mail->hasHtmlContent()) {
+                $content = sprintf('%d. <br> Html Content: %s', $counter, $mail->getHtmlContent());
+            } else {
+                $content = sprintf('%d. <br> Plain Text: %s', $counter, $mail->getPlainTextContent());
+            }
+
+            echo $content;
 
             echo '<br> Senders:';
 
