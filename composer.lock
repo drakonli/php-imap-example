@@ -13,12 +13,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/drakonli/php-imap.git",
-                "reference": "4bc1e4cfe87614ceabff4cc3a130a48da734b2f6"
+                "reference": "cf3d9bd3d7a41dd13cf799ffaef1cf9b85138c1b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/drakonli/php-imap/zipball/4bc1e4cfe87614ceabff4cc3a130a48da734b2f6",
-                "reference": "4bc1e4cfe87614ceabff4cc3a130a48da734b2f6",
+                "url": "https://api.github.com/repos/drakonli/php-imap/zipball/cf3d9bd3d7a41dd13cf799ffaef1cf9b85138c1b",
+                "reference": "cf3d9bd3d7a41dd13cf799ffaef1cf9b85138c1b",
                 "shasum": ""
             },
             "require": {
@@ -59,7 +59,7 @@
                 "mail",
                 "php"
             ],
-            "time": "2016-09-12 12:06:03"
+            "time": "2016-09-12 22:27:48"
         },
         {
             "name": "drakonli/php-utils",
@@ -67,12 +67,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/drakonli/php-utils.git",
-                "reference": "77a7fe07403ea4e4b62623e7edcd0bc300940c2e"
+                "reference": "8bc5d55b0b777ebfab30f2f3b726ce31b0663758"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/drakonli/php-utils/zipball/77a7fe07403ea4e4b62623e7edcd0bc300940c2e",
-                "reference": "77a7fe07403ea4e4b62623e7edcd0bc300940c2e",
+                "url": "https://api.github.com/repos/drakonli/php-utils/zipball/8bc5d55b0b777ebfab30f2f3b726ce31b0663758",
+                "reference": "8bc5d55b0b777ebfab30f2f3b726ce31b0663758",
                 "shasum": ""
             },
             "require": {
@@ -101,7 +101,7 @@
                 "php",
                 "utils"
             ],
-            "time": "2016-09-11 23:43:06"
+            "time": "2016-09-12 22:07:13"
         },
         {
             "name": "symfony/config",
@@ -162,12 +162,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/dependency-injection.git",
-                "reference": "01b1dec65fc145ad323b50ecb795e00c9850e09f"
+                "reference": "6b3755d814821d85c38a0919ffae7614be40208e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/dependency-injection/zipball/01b1dec65fc145ad323b50ecb795e00c9850e09f",
-                "reference": "01b1dec65fc145ad323b50ecb795e00c9850e09f",
+                "url": "https://api.github.com/repos/symfony/dependency-injection/zipball/6b3755d814821d85c38a0919ffae7614be40208e",
+                "reference": "6b3755d814821d85c38a0919ffae7614be40208e",
                 "shasum": ""
             },
             "require": {
@@ -217,7 +217,7 @@
             ],
             "description": "Symfony DependencyInjection Component",
             "homepage": "https://symfony.com",
-            "time": "2016-09-06 11:07:23"
+            "time": "2016-09-12 19:03:45"
         },
         {
             "name": "symfony/filesystem",

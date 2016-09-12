@@ -95,11 +95,13 @@ class PreDefinedGmailConnectionFactory implements PreDefinedConnectionFactoryInt
     public function createConnection()
     {
         $flags = $this->configFlagsBuilder
+            ->startBuilding()
             ->addSslConnectionFlag()
             ->addMailBoxAccessServiceFlag(new \SplString(self::IMAP_SERVICE))
             ->getFlags();
 
         $mailBoxConfig = $this->mailBoxConfigBuilder
+            ->startBuilding()
             ->addMailBoxName(new \SplString($this->mailBox))
             ->addPort(new \SplInt(self::GMAIL_IMAP_PORT))
             ->addRemoteSystemName(new \SplString(self::GMAIL_IMAP_LOCATION))
@@ -107,10 +109,12 @@ class PreDefinedGmailConnectionFactory implements PreDefinedConnectionFactoryInt
             ->getMailBoxConnectionConfig();
 
         $options = $this->configOptionsBuilder
+            ->startBuilding()
             ->addExpungeDeletedMailUponDisconnectionOption()
             ->getOptions();
 
         $connectionConfig = $this->configBuilder
+            ->startBuilding()
             ->addUsername(new \SplString($this->userName))
             ->addPassword(new \SplString($this->password))
             ->addMailBoxConnectionConfig($mailBoxConfig)
