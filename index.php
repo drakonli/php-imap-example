@@ -81,6 +81,15 @@ switch ($_SERVER['REQUEST_URI']) {
 
         break;
 
+    case '/example_with_injected_connection':
+        /**
+         * @var \App\ConnectionInjectedEmailDisplayer $mailDisplayer
+         */
+        $mailDisplayer = $container->get('app.email_displayer.connection_injection');
+        $mailDisplayer->showLetters();
+
+        break;
+
     default:
         throw new \Exception('No request matched');
 

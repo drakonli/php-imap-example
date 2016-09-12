@@ -39,6 +39,14 @@ services:
             - '@mail.repository.basic'
             - '@twig.engine'
 
+    app.email_displayer.connection_injection:
+        class: App\ConnectionInjectedEmailDisplayer
+        arguments:
+            - '@connection.gmail.account_one'
+            - '@mail.search_criteria.collection_builder_basic'
+            - '@mail.repository.basic'
+            - '@twig.engine'
+
     app.connection_factory.pre_defined_connection_gmail_account_one:
         class: App\Connection\PreDefinedGmailConnectionFactory
         arguments:
@@ -62,3 +70,17 @@ services:
             - '@connection.config.mail_box_builder_parameter_bag'
             - '@connection.config.mail_box_flag_collection_builder_basic'
             - '@connection.config.option_collection_builder_basic'
+
+    connection.gmail.account_one:
+        class: PhpImap\Connection\Basic\BasicConnection
+        factory: ['@connection.factory.basic', createConnectionNonStrict]
+        arguments:
+            - '%imap.gmail.account_one.userName%'
+            - '%imap.gmail.account_one.password%'
+            - '%imap.gmail.account_one.connectionRetries%'
+            - '%imap.gmail.account_one.mailBox%'
+            - '%imap.gmail.account_one.remoteSystemName%'
+            - '%imap.gmail.account_one.port%'
+            - '%imap.gmail.account_one.flags%'
+            - '%imap.gmail.account_one.otions%'
+            - '%imap.gmail.account_one.params%'
