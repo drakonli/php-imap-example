@@ -13,7 +13,7 @@ use DateTime;
  * @author    drakonli - Arthur Vinogradov - <artur.drakonli@gmail.com>
  * @link      www.linkedin.com/in/drakonli
  */
-class EmailDisplayer
+class NonStrictFactoryMethodEmailDisplayer
 {
     /**
      * @var string

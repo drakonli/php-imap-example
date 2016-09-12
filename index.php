@@ -53,19 +53,19 @@ $container = (new CachedDependencyContainerLoader($basicLoader, $cacheFile, $isD
  * Crete different and execute different examples by different requests
  */
 switch ($_SERVER['REQUEST_URI']) {
-    case '/':
+    case '/example_with_non_strict_factory_method':
 
         /**
-         * @var \App\EmailDisplayer $mailDisplayer
+         * @var \App\NonStrictFactoryMethodEmailDisplayer $mailDisplayer
          */
-        $mailDisplayer = $container->get('app.email_displayer');
+        $mailDisplayer = $container->get('app.email_displayer.non_strict_factory_method');
         $mailDisplayer->showLetters();
 
         break;
 
     case '/example_with_builders':
         /**
-         * @var \App\EmailDisplayer $mailDisplayer
+         * @var \App\BuildersEmailDisplayer $mailDisplayer
          */
         $mailDisplayer = $container->get('app.email_displayer_with_builders');
         $mailDisplayer->showLetters();

@@ -7,8 +7,8 @@ services:
         class: Twig_Environment
         arguments: ['@twig.file.loader', '%twig.engine.options%']
 
-    app.email_displayer:
-        class: App\EmailDisplayer
+    app.email_displayer.non_strict_factory_method:
+        class: App\NonStrictFactoryMethodEmailDisplayer
         arguments:
             - '%imap.gmail.account_one.userName%'
             - '%imap.gmail.account_one.password%'
@@ -18,7 +18,7 @@ services:
             - '@twig.engine'
 
     app.email_displayer_with_builders:
-        class: App\EmailDisplayerWithBuilders
+        class: App\BuildersEmailDisplayer
         arguments:
             - '%imap.gmail.account_one.userName%'
             - '%imap.gmail.account_one.password%'
