@@ -12,7 +12,7 @@ use \PhpImap\Dependency\Container\Loader\Cached\CachedDependencyContainerLoader;
 /**
  * This is the dependency container initiation. It uses Symfony DependencyInjection Component inside.
  * @see http://symfony.com/doc/current/components/dependency_injection.html
- * I highly recommend to use any dependy injection framework as it will be really hard to manage all the dependencies
+ * I highly recommend to use any dependency injection framework as it will be really hard to manage all the dependencies
  * without it.
  */
 $basicLoader = new BasicDependencyContainerLoader();
@@ -48,16 +48,32 @@ $services = __DIR__.DIRECTORY_SEPARATOR.'src'.DIRECTORY_SEPARATOR.'App'.DIRECTOR
 $container = (new CachedDependencyContainerLoader($basicLoader, $cacheFile, $isDebugMode))
     ->loadContainer([new \SplFileInfo($parameters), new \SplFileInfo($services)]);
 
-/**
- * This next part just gets our example classes from container and executes them
- */
 
 /**
- * @var \App\EmailDisplayer $mailDisplayer
+ * Crete different and execute different examples by different requests
  */
-$mailDisplayer = $container->get('app.email_displayer');
+switch ($_SERVER['REQUEST_URI']) {
+    case '/':
 
-$login = $container->getParameter('gmailLogin');
-$password = $container->getParameter('gmailPassword');
+        /**
+         * @var \App\EmailDisplayer $mailDisplayer
+         */
+        $mailDisplayer = $container->get('app.email_displayer');
+        $mailDisplayer->showLetters();
 
-$mailDisplayer->showLetters($login, $password);
+        break;
+
+    case '/example_with_builders':
+        /**
+         * @var \App\EmailDisplayer $mailDisplayer
+         */
+        $mailDisplayer = $container->get('app.email_displayer_with_builders');
+        $mailDisplayer->showLetters();
+
+        break;
+
+    default:
+        throw new \Exception('No request matched');
+
+        break;
+}

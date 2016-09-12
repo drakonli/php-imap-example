@@ -1,12 +1,4 @@
 services:
-    app.email_displayer:
-        class: App\EmailDisplayer
-        arguments:
-            - '@connection.connection.factory_basic'
-            - '@mail.search_criteria.collection_builder_basic'
-            - '@mail.repository.basic'
-            - '@twig.engine'
-
     twig.file.loader:
         class: Twig_Loader_Filesystem
         arguments: ['%twig.templates.dir%']
@@ -14,3 +6,27 @@ services:
     twig.engine:
         class: Twig_Environment
         arguments: ['@twig.file.loader', '%twig.engine.options%']
+
+    app.email_displayer:
+        class: App\EmailDisplayer
+        arguments:
+            - '%imap.gmail.userName%'
+            - '%imap.gmail.password%'
+            - '@connection.factory.basic'
+            - '@mail.search_criteria.collection_builder_basic'
+            - '@mail.repository.basic'
+            - '@twig.engine'
+
+    app.email_displayer_with_builders:
+        class: App\EmailDisplayerWithBuilders
+        arguments:
+            - '%imap.gmail.userName%'
+            - '%imap.gmail.password%'
+            - '@connection.factory.basic'
+            - '@connection.config.builder_parameter_bag'
+            - '@connection.config.mail_box_builder_parameter_bag'
+            - '@connection.config.mail_box_flag_collection_builder_basic'
+            - '@connection.config.option_collection_builder_basic'
+            - '@mail.search_criteria.collection_builder_basic'
+            - '@mail.repository.basic'
+            - '@twig.engine'

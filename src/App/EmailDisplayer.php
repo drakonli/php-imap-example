@@ -2,7 +2,8 @@
 
 namespace App;
 
-use PhpImap\Connection\Config\Mail\Box\Flag\Collection\Factory\MailBoxConnectionConfigFlagCollectionFactoryInterface;
+use PhpImap\Connection\Config\Mail\Box\Flag\MailBoxConnectionConfigFlagInterface;
+use PhpImap\Connection\Config\Option\ConnectionConfigOptionInterface;
 use PhpImap\Connection\Factory\ConnectionFactoryInterface;
 use PhpImap\Mail\Criteria\Search\Collection\Builder\SearchCriteriaCollectionBuilderInterface;
 use PhpImap\Mail\Repository\MailRepositoryInterface;
@@ -15,9 +16,19 @@ use DateTime;
 class EmailDisplayer
 {
     /**
+     * @var string
+     */
+    private $userName;
+
+    /**
+     * @var string
+     */
+    private $password;
+
+    /**
      * @var ConnectionFactoryInterface
      */
-    private $fullConnectionFactory;
+    private $connectionFactory;
 
     /**
      * @var SearchCriteriaCollectionBuilderInterface
@@ -37,43 +48,49 @@ class EmailDisplayer
     /**
      * EmailDisplayer constructor.
      *
-     * @param ConnectionFactoryInterface               $fullConnectionFactory
+     * @param                                          $userName
+     * @param string                                   $password
+     * @param ConnectionFactoryInterface               $connectionFactory
      * @param SearchCriteriaCollectionBuilderInterface $mailSearchCriteriaBuilder
      * @param MailRepositoryInterface                  $mailRepository
      * @param \Twig_Environment                        $twig
      */
     public function __construct(
-        ConnectionFactoryInterface $fullConnectionFactory,
+        $userName,
+        $password,
+        ConnectionFactoryInterface $connectionFactory,
         SearchCriteriaCollectionBuilderInterface $mailSearchCriteriaBuilder,
         MailRepositoryInterface $mailRepository,
         \Twig_Environment $twig
     ) {
-        $this->fullConnectionFactory = $fullConnectionFactory;
+        $this->userName = $userName;
+        $this->password = $password;
+        $this->connectionFactory = $connectionFactory;
         $this->mailSearchCriteriaBuilder = $mailSearchCriteriaBuilder;
         $this->mailRepository = $mailRepository;
         $this->twig = $twig;
     }
 
-    public function showLetters($userName, $password)
+    public function showLetters()
     {
-        $connection = $this->fullConnectionFactory->createConnectionNonStrict(
-            $userName,
-            $password,
+        $connection = $this->connectionFactory->createConnectionNonStrict(
+            $this->userName,
+            $this->password,
             0,
             'INBOX',
             'imap.gmail.com',
             993,
             [
-                MailBoxConnectionConfigFlagCollectionFactoryInterface::FLAG_WITH_VALUE_SERVICE => 'imap',
-                MailBoxConnectionConfigFlagCollectionFactoryInterface::FLAG_SSL,
+                MailBoxConnectionConfigFlagInterface::FLAG_WITH_VALUE_SERVICE => 'imap',
+                MailBoxConnectionConfigFlagInterface::FLAG_SSL,
             ],
-            [CL_EXPUNGE],
+            [ConnectionConfigOptionInterface::OPTION_READONLY_MODE],
             []
         );
 
         $mailSearchCriteria = $this->mailSearchCriteriaBuilder
             ->startBuilding()
-            ->addOnDateCriteria(new DateTime('yesterday'))
+            ->addOnDateCriteria(new DateTime('today'))
             ->getSearchCriteriaCollection();
 
         $mails = $this->mailRepository->find(

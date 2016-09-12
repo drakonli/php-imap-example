@@ -13,19 +13,19 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/drakonli/php-imap.git",
-                "reference": "1404ab1378b11696f79eefeb59193c9011f6d545"
+                "reference": "6366b5df6cd08bd88b5ccbbab2fd7c99b8f7e492"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/drakonli/php-imap/zipball/1404ab1378b11696f79eefeb59193c9011f6d545",
-                "reference": "1404ab1378b11696f79eefeb59193c9011f6d545",
+                "url": "https://api.github.com/repos/drakonli/php-imap/zipball/6366b5df6cd08bd88b5ccbbab2fd7c99b8f7e492",
+                "reference": "6366b5df6cd08bd88b5ccbbab2fd7c99b8f7e492",
                 "shasum": ""
             },
             "require": {
                 "drakonli/php-utils": "dev-master",
                 "ext-imap": "*",
                 "ext-spl_types": "*",
-                "php": ">=5.3.0",
+                "php": ">=5.6.0",
                 "symfony/config": "^3.0.0",
                 "symfony/dependency-injection": "^3.0.0",
                 "symfony/yaml": "^3.0.0"
@@ -59,7 +59,7 @@
                 "mail",
                 "php"
             ],
-            "time": "2016-09-11 15:53:07"
+            "time": "2016-09-12 09:42:09"
         },
         {
             "name": "drakonli/php-utils",
@@ -67,12 +67,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/drakonli/php-utils.git",
-                "reference": "8afbb4792aa39f3db5ee61b5efd07518c7de562d"
+                "reference": "77a7fe07403ea4e4b62623e7edcd0bc300940c2e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/drakonli/php-utils/zipball/8afbb4792aa39f3db5ee61b5efd07518c7de562d",
-                "reference": "8afbb4792aa39f3db5ee61b5efd07518c7de562d",
+                "url": "https://api.github.com/repos/drakonli/php-utils/zipball/77a7fe07403ea4e4b62623e7edcd0bc300940c2e",
+                "reference": "77a7fe07403ea4e4b62623e7edcd0bc300940c2e",
                 "shasum": ""
             },
             "require": {
@@ -101,7 +101,7 @@
                 "php",
                 "utils"
             ],
-            "time": "2016-09-09 13:47:14"
+            "time": "2016-09-11 23:43:06"
         },
         {
             "name": "symfony/config",

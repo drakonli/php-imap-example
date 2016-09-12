@@ -1,9 +1,19 @@
 parameters:
     #change these according to your preference
     mail.attachments.folder: /var/www/public/attachments
-    gmailLogin: login
-    gmailPassword: password
     twig.templates.dir: /var/www/public/src/App/resources/templates
     twig.engine.options:
         cache: /var/www/public/cache
         debug: false
+
+    imap.gmail.userName: login
+    imap.gmail.password: password
+    imap.gmail.connectionRetries: 0
+    imap.gmail.mailBox: INBOX
+    imap.gmail.remoteSystemName: imap.gmail.com
+    imap.gmail.port: 993
+    imap.gmail.flags:
+        0: ssl
+        service: imap
+    imap.gmail.otions: []
+    imap.gmail.params: []
