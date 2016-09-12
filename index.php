@@ -72,6 +72,15 @@ switch ($_SERVER['REQUEST_URI']) {
 
         break;
 
+    case '/example_with_predefined_connection_factory':
+        /**
+         * @var \App\PreDefinedConnectionFactoryEmailDisplayer $mailDisplayer
+         */
+        $mailDisplayer = $container->get('app.email_displayer.pre_defined_connection');
+        $mailDisplayer->showLetters();
+
+        break;
+
     default:
         throw new \Exception('No request matched');
 

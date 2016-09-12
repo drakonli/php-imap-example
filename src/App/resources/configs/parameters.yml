@@ -6,14 +6,28 @@ parameters:
         cache: /var/www/public/cache
         debug: false
 
-    imap.gmail.userName: login
-    imap.gmail.password: password
-    imap.gmail.connectionRetries: 0
-    imap.gmail.mailBox: INBOX
-    imap.gmail.remoteSystemName: imap.gmail.com
-    imap.gmail.port: 993
-    imap.gmail.flags:
+    # gmail imap account options
+    imap.gmail.account_one.userName: login1
+    imap.gmail.account_one.password: login2
+    imap.gmail.account_one.connectionRetries: 0
+    imap.gmail.account_one.mailBox: INBOX
+    imap.gmail.account_one.remoteSystemName: imap.gmail.com
+    imap.gmail.account_one.port: 993
+    imap.gmail.account_one.flags:
         0: ssl
         service: imap
-    imap.gmail.otions: []
-    imap.gmail.params: []
+    imap.gmail.account_one.otions: []
+    imap.gmail.account_one.params: []
+
+    # another gmail imap account options
+    imap.gmail.account_two.userName: login2
+    imap.gmail.account_two.password: password2
+    imap.gmail.account_two.connectionRetries: 0
+    imap.gmail.account_two.mailBox: INBOX
+    imap.gmail.account_two.remoteSystemName: imap.gmail.com
+    imap.gmail.account_two.port: 993
+    imap.gmail.account_two.flags:
+        0: ssl
+        service: imap
+    imap.gmail.account_two.otions: []
+    imap.gmail.account_two.params: []
