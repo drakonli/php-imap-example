@@ -8,7 +8,7 @@ parameters:
 
     # gmail imap account options
     imap.gmail.account_one.userName: login1
-    imap.gmail.account_one.password: login2
+    imap.gmail.account_one.password: password1
     imap.gmail.account_one.connectionRetries: 0
     imap.gmail.account_one.mailBox: INBOX
     imap.gmail.account_one.remoteSystemName: imap.gmail.com
