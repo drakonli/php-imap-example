@@ -13,12 +13,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/drakonli/php-imap.git",
-                "reference": "cf3d9bd3d7a41dd13cf799ffaef1cf9b85138c1b"
+                "reference": "926c76ab08d8f413ae72936542aa0836010f8c72"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/drakonli/php-imap/zipball/cf3d9bd3d7a41dd13cf799ffaef1cf9b85138c1b",
-                "reference": "cf3d9bd3d7a41dd13cf799ffaef1cf9b85138c1b",
+                "url": "https://api.github.com/repos/drakonli/php-imap/zipball/926c76ab08d8f413ae72936542aa0836010f8c72",
+                "reference": "926c76ab08d8f413ae72936542aa0836010f8c72",
                 "shasum": ""
             },
             "require": {
@@ -59,7 +59,7 @@
                 "mail",
                 "php"
             ],
-            "time": "2016-09-12 22:27:48"
+            "time": "2016-09-20 11:02:02"
         },
         {
             "name": "drakonli/php-utils",
@@ -67,12 +67,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/drakonli/php-utils.git",
-                "reference": "8bc5d55b0b777ebfab30f2f3b726ce31b0663758"
+                "reference": "1aeb6c2050f46f279de8f0273e407eb7869e9149"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/drakonli/php-utils/zipball/8bc5d55b0b777ebfab30f2f3b726ce31b0663758",
-                "reference": "8bc5d55b0b777ebfab30f2f3b726ce31b0663758",
+                "url": "https://api.github.com/repos/drakonli/php-utils/zipball/1aeb6c2050f46f279de8f0273e407eb7869e9149",
+                "reference": "1aeb6c2050f46f279de8f0273e407eb7869e9149",
                 "shasum": ""
             },
             "require": {
@@ -101,7 +101,7 @@
                 "php",
                 "utils"
             ],
-            "time": "2016-09-12 22:07:13"
+            "time": "2016-09-13 17:20:36"
         },
         {
             "name": "symfony/config",
@@ -109,17 +109,20 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/config.git",
-                "reference": "cb9b3175b3fc3842459a74ab48f9a9f4293675e8"
+                "reference": "dd9921cab28b9605a0693d04e851d86e83b4a0fa"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/config/zipball/cb9b3175b3fc3842459a74ab48f9a9f4293675e8",
-                "reference": "cb9b3175b3fc3842459a74ab48f9a9f4293675e8",
+                "url": "https://api.github.com/repos/symfony/config/zipball/dd9921cab28b9605a0693d04e851d86e83b4a0fa",
+                "reference": "dd9921cab28b9605a0693d04e851d86e83b4a0fa",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.5.9",
                 "symfony/filesystem": "~2.8|~3.0"
+            },
+            "require-dev": {
+                "symfony/yaml": "~3.0"
             },
             "suggest": {
                 "symfony/yaml": "To use the yaml reference dumper"
@@ -154,7 +157,7 @@
             ],
             "description": "Symfony Config Component",
             "homepage": "https://symfony.com",
-            "time": "2016-08-31 18:30:14"
+            "time": "2016-09-15 14:03:09"
         },
         {
             "name": "symfony/dependency-injection",
@@ -162,12 +165,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/dependency-injection.git",
-                "reference": "6b3755d814821d85c38a0919ffae7614be40208e"
+                "reference": "fe652a57a24b4359dfb4909aea59c4882921b6c5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/dependency-injection/zipball/6b3755d814821d85c38a0919ffae7614be40208e",
-                "reference": "6b3755d814821d85c38a0919ffae7614be40208e",
+                "url": "https://api.github.com/repos/symfony/dependency-injection/zipball/fe652a57a24b4359dfb4909aea59c4882921b6c5",
+                "reference": "fe652a57a24b4359dfb4909aea59c4882921b6c5",
                 "shasum": ""
             },
             "require": {
@@ -217,7 +220,7 @@
             ],
             "description": "Symfony DependencyInjection Component",
             "homepage": "https://symfony.com",
-            "time": "2016-09-12 19:03:45"
+            "time": "2016-09-19 19:25:58"
         },
         {
             "name": "symfony/filesystem",
@@ -225,12 +228,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/filesystem.git",
-                "reference": "f16eed71fc31c4d2c186f2dd196db14d146fb3fc"
+                "reference": "b3251ed8c44eff89b9ca6aa2d89f9f9b4565e056"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/filesystem/zipball/f16eed71fc31c4d2c186f2dd196db14d146fb3fc",
-                "reference": "f16eed71fc31c4d2c186f2dd196db14d146fb3fc",
+                "url": "https://api.github.com/repos/symfony/filesystem/zipball/b3251ed8c44eff89b9ca6aa2d89f9f9b4565e056",
+                "reference": "b3251ed8c44eff89b9ca6aa2d89f9f9b4565e056",
                 "shasum": ""
             },
             "require": {
@@ -266,7 +269,7 @@
             ],
             "description": "Symfony Filesystem Component",
             "homepage": "https://symfony.com",
-            "time": "2016-09-06 11:07:23"
+            "time": "2016-09-14 22:49:28"
         },
         {
             "name": "symfony/yaml",
@@ -274,12 +277,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/yaml.git",
-                "reference": "aa8be2235b5dd4e472424552390609f61996f5ab"
+                "reference": "7fbb0dfc86370757774ff2d9bd5c3b89c9aac1a8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/yaml/zipball/aa8be2235b5dd4e472424552390609f61996f5ab",
-                "reference": "aa8be2235b5dd4e472424552390609f61996f5ab",
+                "url": "https://api.github.com/repos/symfony/yaml/zipball/7fbb0dfc86370757774ff2d9bd5c3b89c9aac1a8",
+                "reference": "7fbb0dfc86370757774ff2d9bd5c3b89c9aac1a8",
                 "shasum": ""
             },
             "require": {
@@ -321,7 +324,7 @@
             ],
             "description": "Symfony Yaml Component",
             "homepage": "https://symfony.com",
-            "time": "2016-09-02 02:14:06"
+            "time": "2016-09-20 08:33:13"
         },
         {
             "name": "twig/twig",
@@ -329,12 +332,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/twigphp/Twig.git",
-                "reference": "c418d07c64bdf004635973f978c806a53a32b320"
+                "reference": "03dd9c5e5154e5835297e612feaaaaec8ccb6743"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/twigphp/Twig/zipball/c418d07c64bdf004635973f978c806a53a32b320",
-                "reference": "c418d07c64bdf004635973f978c806a53a32b320",
+                "url": "https://api.github.com/repos/twigphp/Twig/zipball/03dd9c5e5154e5835297e612feaaaaec8ccb6743",
+                "reference": "03dd9c5e5154e5835297e612feaaaaec8ccb6743",
                 "shasum": ""
             },
             "require": {
@@ -347,7 +350,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.24-dev"
+                    "dev-master": "1.25-dev"
                 }
             },
             "autoload": {
@@ -382,7 +385,7 @@
             "keywords": [
                 "templating"
             ],
-            "time": "2016-09-01 17:55:16"
+            "time": "2016-09-20 05:07:57"
         }
     ],
     "packages-dev": [],

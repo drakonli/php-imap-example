@@ -5,7 +5,7 @@ namespace App;
 use DateTime;
 use PhpImap\Connection\Factory\PreDefined\PreDefinedConnectionFactoryInterface;
 use PhpImap\Mail\Criteria\Search\Collection\Builder\SearchCriteriaCollectionBuilderInterface;
-use PhpImap\Mail\Repository\MailRepositoryInterface;
+use PhpImap\Mail\Service\Repository\MailRepositoryInterface;
 
 /**
  * @author    drakonli - Arthur Vinogradov - <artur.drakonli@gmail.com>

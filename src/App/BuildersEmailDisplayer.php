@@ -8,7 +8,7 @@ use PhpImap\Connection\Config\Mail\Box\Flag\Collection\Builder\MailBoxConnection
 use PhpImap\Connection\Config\Option\Collection\Builder\ConnectionOptionsConfigBuilderInterface;
 use PhpImap\Connection\Factory\ConnectionFactoryInterface;
 use PhpImap\Mail\Criteria\Search\Collection\Builder\SearchCriteriaCollectionBuilderInterface;
-use PhpImap\Mail\Repository\MailRepositoryInterface;
+use PhpImap\Mail\Service\Repository\MailRepositoryInterface;
 use DateTime;
 
 /**

@@ -4,7 +4,7 @@ namespace App;
 
 use PhpImap\Connection\ConnectionInterface;
 use PhpImap\Mail\Criteria\Search\Collection\Builder\SearchCriteriaCollectionBuilderInterface;
-use PhpImap\Mail\Repository\MailRepositoryInterface;
+use PhpImap\Mail\Service\Repository\MailRepositoryInterface;
 use DateTime;
 
 /**
